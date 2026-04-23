@@ -31,7 +31,7 @@ html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:hidden}
 
 /* TICKER */
-.ticker{background:var(--copper);padding:0.55rem 0;overflow:hidden;z-index:200;position:relative}
+.ticker{background:var(--copper);padding:0.55rem 0;overflow:hidden;z-index:200;position:relative;margin-top:62px}
 .ticker-track{display:flex;width:max-content;animation:tk 45s linear infinite}
 @keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .t-item{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.2em;color:#1a1008;font-weight:600;padding:0 2.2rem;border-right:1px solid rgba(0,0,0,0.15);white-space:nowrap}
@@ -240,7 +240,7 @@ footer{background:var(--bg);border-top:1px solid var(--copper-border);padding:2.
 
 @media(max-width:960px){
   nav .nav-links{display:none}
-  .hero{padding:5.5rem 1.5rem 3rem}
+  .hero{padding:3.5rem 1.5rem 3rem}
   .biz-grid{grid-template-columns:1fr}
   .hffmc{grid-template-columns:1fr;gap:2rem}
   .acq-wrap{grid-template-columns:1fr;gap:3rem}
