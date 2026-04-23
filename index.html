@@ -28,10 +28,10 @@
   --sans:'Noto Sans TC',sans-serif;
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:hidden}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:hidden;font-size:18px}
 
 /* TICKER */
-.ticker{background:var(--copper);padding:0.55rem 0;overflow:hidden;z-index:200;position:relative}
+.ticker{background:var(--copper);padding:0.55rem 0;overflow:hidden;z-index:200;position:relative;margin-top:62px}
 .ticker-track{display:flex;width:max-content;animation:tk 45s linear infinite}
 @keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .t-item{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.2em;color:#1a1008;font-weight:600;padding:0 2.2rem;border-right:1px solid rgba(0,0,0,0.15);white-space:nowrap}
@@ -43,17 +43,17 @@ nav{
   padding:0 2.5rem;
   background:rgba(20,32,46,0.93);
   backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--copper-border);
+  border-bottom:none;
 }
 .nav-brand{display:flex;align-items:center;gap:0.8rem}
 .nav-logo-img{height:38px;width:auto;mix-blend-mode:screen;filter:brightness(1.1)}
 .nav-brand-text{}
-.brand-en{font-family:var(--mono);font-size:0.78rem;font-weight:500;color:var(--copper-light);letter-spacing:0.2em;display:block}
-.brand-cn{font-family:var(--serif);font-size:0.72rem;color:var(--text-low);letter-spacing:0.1em;font-weight:300}
+.brand-en{font-family:var(--mono);font-size:1.05rem;font-weight:500;color:var(--copper-light);letter-spacing:0.18em;display:block}
+.brand-cn{font-family:var(--serif);font-size:0.92rem;color:var(--text-mid);letter-spacing:0.1em;font-weight:400}
 .nav-links{display:flex;gap:2.2rem;align-items:center}
-.nav-links a{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.15em;color:var(--text-low);text-decoration:none;transition:color 0.2s;text-transform:uppercase}
+.nav-links a{font-family:var(--mono);font-size:0.85rem;letter-spacing:0.12em;color:var(--text-mid);text-decoration:none;transition:color 0.2s;text-transform:uppercase}
 .nav-links a:hover{color:var(--copper-light)}
-.nav-cta{border:1px solid var(--copper-border) !important;color:var(--copper-light) !important;padding:0.4rem 1rem;transition:background 0.2s,color 0.2s !important}
+.nav-cta{border:1px solid var(--copper-light) !important;color:var(--copper-light) !important;padding:0.45rem 1.1rem;transition:background 0.2s,color 0.2s !important;font-weight:500}
 .nav-cta:hover{background:var(--copper) !important;color:#fff !important}
 
 /* HERO */
@@ -79,14 +79,16 @@ nav{
   width:min(68vw,300px);
   margin:0 auto 2rem;
   display:block;
-  animation:heroLogoIn 1s 0.1s ease forwards;
+  animation:heroLogoIn 1.2s 0.1s ease forwards;
   opacity:0;
-  border-radius:4px;
+  border-radius:8px;
   overflow:hidden;
+  mix-blend-mode:luminosity;
+  filter:brightness(0.85) saturate(0.9);
 }
 @keyframes heroLogoIn{
   from{opacity:0;transform:translateY(10px)}
-  to{opacity:1;transform:none}
+  to{opacity:0.82;transform:none}
 }
 .hero-body{position:relative;z-index:3;max-width:760px;width:100%}
 
@@ -113,14 +115,14 @@ nav{
 }
 .hero-name{
   font-family:var(--serif);
-  font-size:clamp(1.2rem,2.5vw,1.9rem);font-weight:700;
+  font-size:clamp(1.4rem,2.8vw,2.1rem);font-weight:700;
   color:var(--text);letter-spacing:0.2em;
   margin-bottom:1.2rem;
   opacity:0;animation:sUp 0.5s 0.65s ease forwards;
 }
 .hero-tagline{
   font-family:var(--mono);
-  font-size:clamp(0.85rem,1.4vw,1.05rem);
+  font-size:clamp(1rem,1.6vw,1.2rem);
   letter-spacing:0.06em;line-height:2;
   color:var(--text-mid);
   margin-bottom:3rem;
@@ -129,40 +131,49 @@ nav{
 .hero-tagline em{font-style:italic;color:var(--copper-pale);display:block;margin-bottom:0.1rem;font-size:1.1em}
 @keyframes sUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .hero-btns{display:flex;gap:1.1rem;flex-wrap:wrap;justify-content:center;opacity:0;animation:sUp 0.5s 0.95s ease forwards}
-.btn-copper{display:inline-flex;align-items:center;text-decoration:none;background:var(--copper);color:#fff;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.2em;padding:0.9rem 2rem;font-weight:500;transition:background 0.15s,transform 0.15s}
+.btn-copper{display:inline-flex;align-items:center;text-decoration:none;background:var(--copper);color:#fff;font-family:var(--sans);font-size:1rem;letter-spacing:0.08em;padding:0.9rem 2.2rem;font-weight:500;transition:background 0.15s,transform 0.15s}
 .btn-copper:hover{background:var(--copper-light);transform:translateY(-2px)}
-.btn-line{display:inline-flex;align-items:center;text-decoration:none;border:1px solid rgba(143,168,192,0.35);color:var(--fog);font-family:var(--mono);font-size:0.75rem;letter-spacing:0.2em;padding:0.9rem 2rem;transition:border-color 0.15s,color 0.15s}
+.btn-line{display:inline-flex;align-items:center;text-decoration:none;border:1px solid rgba(143,168,192,0.45);color:var(--fog);font-family:var(--sans);font-size:1rem;letter-spacing:0.08em;padding:0.9rem 2.2rem;transition:border-color 0.15s,color 0.15s}
 .btn-line:hover{border-color:var(--copper-light);color:var(--copper-light)}
 
 /* SEC BASE */
 .sec{padding:5.5rem 2.5rem}
-.s-tag{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--copper);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.7rem}
+.s-tag{font-family:var(--mono);font-size:1.05rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper-light);margin-bottom:1rem;display:flex;align-items:center;gap:0.7rem;font-weight:500}
 .s-tag::before{content:'//';opacity:0.6}
-.s-title{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;line-height:1.25;margin-bottom:1.2rem}
+.s-title{font-family:var(--serif);font-size:clamp(2rem,3.8vw,3rem);font-weight:700;line-height:1.25;margin-bottom:1.2rem}
 .s-title em{font-style:normal;color:var(--copper-light)}
-.s-body{font-size:0.95rem;line-height:2;color:var(--text-mid);font-weight:300}
+.s-body{font-size:1.15rem;line-height:2;color:var(--text-mid);font-weight:300}
 
 /* BUSINESS */
 .business{background:var(--bg2)}
 .biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--copper-border);margin-top:3.5rem}
 .biz-card{background:var(--bg2);padding:2.8rem 2.2rem;position:relative;overflow:hidden;transition:background 0.3s}
 .biz-card:hover{background:var(--panel)}
-.biz-n{position:absolute;right:1.5rem;top:1.2rem;font-family:var(--mono);font-size:5rem;font-weight:300;color:rgba(200,134,74,0.06);line-height:1;pointer-events:none}
+.biz-n{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  font-family:var(--mono);font-size:0.95rem;font-weight:500;
+  color:var(--copper-light);letter-spacing:0.15em;
+  margin-bottom:1.4rem;
+  padding:0.5rem 0;
+  border-top:1px solid var(--copper-border);
+  border-bottom:1px solid var(--copper-border);
+  width:100%;
+}
 .biz-icon{width:42px;height:42px;border:1px solid var(--copper-border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:1.4rem;color:var(--copper-light)}
-.biz-en{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.2em;color:var(--copper);text-transform:uppercase;margin-bottom:0.5rem}
-.biz-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:0.9rem;letter-spacing:0.05em}
-.biz-desc{font-size:0.92rem;line-height:2;color:var(--text-mid);font-weight:300;margin-bottom:1.6rem}
-.biz-box{background:var(--copper-ghost);border:1px solid var(--copper-border);border-left:2px solid var(--copper);padding:1rem 1.1rem;font-family:var(--mono);font-size:0.72rem;color:rgba(200,134,74,0.85);line-height:1.7}
-.biz-box b{display:block;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--copper);margin-bottom:0.25rem}
+.biz-en{display:none}
+.biz-title{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:0.9rem;letter-spacing:0.05em}
+.biz-desc{font-size:1.1rem;line-height:2;color:var(--text-mid);font-weight:300;margin-bottom:1.6rem}
+.biz-box{background:var(--copper-ghost);border:1px solid var(--copper-border);border-left:2px solid var(--copper);padding:1rem 1.1rem;font-family:var(--mono);font-size:0.88rem;color:rgba(200,134,74,0.85);line-height:1.7}
+.biz-box b{display:block;font-size:0.82rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--copper-light);margin-bottom:0.35rem;font-weight:600}
 
 /* HFFMC */
 .hffmc{background:var(--panel);border-top:1px solid var(--copper-border);border-bottom:1px solid var(--copper-border);padding:5rem 2.5rem;display:grid;grid-template-columns:auto 1fr;gap:5rem;align-items:center}
 .hffmc-mark{font-family:var(--mono);font-size:clamp(2.2rem,4vw,4rem);font-weight:500;color:var(--copper-light);letter-spacing:0.06em;line-height:1.1;white-space:nowrap}
-.hffmc-mark small{display:block;font-size:0.62rem;letter-spacing:0.28em;color:var(--fog);margin-top:0.6rem;text-transform:uppercase;font-weight:300}
-.hffmc-t{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--text);margin-bottom:0.9rem}
-.hffmc-d{font-size:0.95rem;line-height:2;color:var(--text-mid);font-weight:300;margin-bottom:1.8rem;max-width:620px}
+.hffmc-mark small{display:block;font-size:0.72rem;letter-spacing:0.22em;color:var(--fog);margin-top:0.6rem;text-transform:uppercase;font-weight:400}
+.hffmc-t{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--text);margin-bottom:0.9rem}
+.hffmc-d{font-size:1.1rem;line-height:2;color:var(--text-mid);font-weight:300;margin-bottom:1.8rem;max-width:620px}
 .tags{display:flex;flex-wrap:wrap;gap:0.5rem}
-.tag{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.12em;border:1px solid var(--copper-border);color:var(--fog);padding:0.38rem 0.8rem;transition:background 0.2s,color 0.2s}
+.tag{font-family:var(--mono);font-size:0.95rem;letter-spacing:0.08em;border:1px solid var(--copper-border);color:var(--text-mid);padding:0.45rem 1rem;transition:background 0.2s,color 0.2s}
 .tag:hover{background:var(--copper-ghost);color:var(--copper-light)}
 
 /* ACQUISITION */
@@ -171,22 +182,22 @@ nav{
 .acq-badge{background:var(--copper-ghost);border:1px solid var(--copper-border);padding:1.8rem;margin-top:1.5rem}
 .acq-badge-label{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.22em;color:var(--copper);text-transform:uppercase;margin-bottom:0.5rem}
 .acq-badge-val{font-family:var(--mono);font-size:3rem;font-weight:300;color:var(--copper-pale);line-height:1}
-.acq-badge-note{font-family:var(--mono);font-size:0.72rem;color:var(--text-low);margin-top:0.5rem}
-.criteria-head{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--copper);margin-bottom:1.2rem;display:flex;align-items:center;gap:0.7rem}
+.acq-badge-note{font-family:var(--mono);font-size:0.88rem;color:var(--text-low);margin-top:0.5rem}
+.criteria-head{font-family:var(--mono);font-size:1.05rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper-light);margin-bottom:1.2rem;display:flex;align-items:center;gap:0.7rem;font-weight:500}
 .criteria-head::before{content:'//';opacity:0.6}
 .criterion{display:grid;grid-template-columns:28px 1fr;gap:0.9rem;align-items:start;padding:1.2rem 0;border-bottom:1px solid var(--text-ghost)}
 .criterion:first-of-type{border-top:1px solid var(--text-ghost)}
 .criterion:hover .c-text{color:var(--text)}
 .c-num{font-family:var(--mono);font-size:0.68rem;color:var(--copper);margin-top:2px}
-.c-text{font-size:0.95rem;line-height:1.7;color:var(--text-mid);font-weight:300}
+.c-text{font-size:1.15rem;line-height:1.7;color:var(--text-mid);font-weight:300}
 
 /* PHILOSOPHY */
 .philosophy{background:var(--panel);padding:8rem 2.5rem;text-align:center;position:relative;overflow:hidden}
 .philosophy::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 55% at 50% 50%,rgba(200,134,74,0.06) 0%,transparent 70%)}
 .phil-quote{position:relative;z-index:2;max-width:800px;margin:0 auto}
-.q-line1{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,4.2rem);font-weight:300;color:var(--text-mid);line-height:1.35;margin-bottom:0.4rem}
-.q-line2{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,4.2rem);font-weight:700;color:var(--copper-light);line-height:1.35;margin-bottom:2.8rem}
-.q-sub{font-family:var(--mono);font-size:0.75rem;letter-spacing:0.28em;color:var(--text-low);text-transform:uppercase}
+.q-line1{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.8rem);font-weight:300;color:var(--text-mid);line-height:1.35;margin-bottom:0.4rem}
+.q-line2{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.8rem);font-weight:700;color:var(--copper-light);line-height:1.35;margin-bottom:2.8rem}
+.q-sub{font-family:var(--mono);font-size:0.92rem;letter-spacing:0.28em;color:var(--text-low);text-transform:uppercase}
 
 /* CONTACT */
 .contact{background:var(--bg2);display:grid;grid-template-columns:1fr 1fr;gap:5rem;padding:5.5rem 2.5rem}
@@ -194,34 +205,34 @@ nav{
 .info-row{display:flex;gap:1.2rem;align-items:flex-start}
 .info-ico{width:38px;height:38px;flex-shrink:0;border:1px solid var(--copper-border);display:flex;align-items:center;justify-content:center;color:var(--copper)}
 .info-ico svg{width:16px;height:16px;stroke:var(--copper);fill:none;stroke-width:1.5}
-.info-lbl{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper);margin-bottom:0.3rem;opacity:0.7}
-.info-val{font-size:0.95rem;color:var(--text-mid);font-weight:300}
+.info-lbl{font-family:var(--mono);font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--copper-light);margin-bottom:0.3rem}
+.info-val{font-size:1.15rem;color:var(--text-mid);font-weight:300}
 .info-val a{color:inherit;text-decoration:none;transition:color 0.2s}.info-val a:hover{color:var(--copper-light)}
 .info-hours{margin-top:1.8rem;padding:1.5rem;background:var(--copper-ghost);border:1px solid var(--copper-border)}
-.hours-label{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.2em;color:var(--copper);text-transform:uppercase;margin-bottom:0.8rem}
-.hours-row{display:flex;justify-content:space-between;font-size:0.88rem;color:var(--text-low);font-weight:300;padding:0.3rem 0;border-bottom:1px solid var(--text-ghost)}
+.hours-label{font-family:var(--mono);font-size:0.9rem;letter-spacing:0.15em;color:var(--copper-light);text-transform:uppercase;margin-bottom:0.8rem;font-weight:500}
+.hours-row{display:flex;justify-content:space-between;font-size:1.1rem;color:var(--text-low);font-weight:300;padding:0.3rem 0;border-bottom:1px solid var(--text-ghost)}
 .hours-row:last-child{border-bottom:none}
 .hours-row span{color:var(--text-mid)}
 
 .contact-form{display:flex;flex-direction:column;gap:1rem}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .f-group{display:flex;flex-direction:column;gap:0.4rem}
-.f-label{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper);opacity:0.7}
-.f-group input,.f-group textarea,.f-group select{background:rgba(255,255,255,0.04);border:1px solid rgba(143,168,192,0.2);padding:0.85rem 1rem;color:var(--text);font-family:var(--sans);font-size:0.9rem;font-weight:300;outline:none;resize:none;transition:border-color 0.2s;appearance:none}
+.f-label{font-family:var(--mono);font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--copper-light)}
+.f-group input,.f-group textarea,.f-group select{background:rgba(255,255,255,0.04);border:1px solid rgba(143,168,192,0.2);padding:0.9rem 1rem;color:var(--text);font-family:var(--sans);font-size:1.05rem;font-weight:300;outline:none;resize:none;transition:border-color 0.2s;appearance:none}
 .f-group input:focus,.f-group textarea:focus{border-color:rgba(200,134,74,0.5)}
 .f-group input::placeholder,.f-group textarea::placeholder{color:rgba(216,228,240,0.2)}
 .f-group textarea{min-height:110px}
 .f-group select option{background:var(--panel);color:var(--text)}
-.f-note{font-family:var(--mono);font-size:0.68rem;color:var(--text-low);line-height:1.6}
-.f-submit{background:var(--copper);color:#fff;border:none;cursor:pointer;padding:0.9rem 2rem;align-self:flex-start;font-family:var(--mono);font-size:0.72rem;letter-spacing:0.2em;font-weight:500;transition:background 0.15s}
+.f-note{font-family:var(--mono);font-size:0.88rem;color:var(--text-low);line-height:1.6}
+.f-submit{background:var(--copper);color:#fff;border:none;cursor:pointer;padding:1rem 2.2rem;align-self:flex-start;font-family:var(--sans);font-size:1.05rem;letter-spacing:0.2em;font-weight:500;transition:background 0.15s}
 .f-submit:hover{background:var(--copper-light)}
 
 /* FOOTER */
 footer{background:var(--bg);border-top:1px solid var(--copper-border);padding:2.5rem 2.5rem;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem}
-.footer-brand{font-family:var(--mono);font-size:0.75rem;font-weight:500;color:var(--copper);letter-spacing:0.18em;opacity:0.7}
-.footer-brand span{display:block;font-size:0.65rem;letter-spacing:0.12em;color:var(--text-low);margin-top:0.3rem;font-weight:300}
-.footer-copy{font-family:var(--mono);font-size:0.65rem;color:var(--text-low);text-align:right}
-.footer-addr{font-family:var(--mono);font-size:0.65rem;color:var(--fog);margin-top:0.25rem;text-align:right;opacity:0.6}
+.footer-brand{font-family:var(--mono);font-size:0.88rem;font-weight:500;color:var(--copper-light);letter-spacing:0.15em}
+.footer-brand span{display:block;font-size:0.78rem;letter-spacing:0.1em;color:var(--text-low);margin-top:0.3rem;font-weight:300}
+.footer-copy{font-family:var(--mono);font-size:0.85rem;color:var(--text-low);text-align:right}
+.footer-addr{font-family:var(--mono);font-size:0.85rem;color:var(--fog);margin-top:0.25rem;text-align:right;opacity:0.6}
 
 /* FADE */
 .fade{opacity:0;transform:translateY(20px);transition:opacity 0.65s,transform 0.65s}
@@ -229,7 +240,7 @@ footer{background:var(--bg);border-top:1px solid var(--copper-border);padding:2.
 
 @media(max-width:960px){
   nav .nav-links{display:none}
-  .hero{padding:5.5rem 1.5rem 3rem}
+  .hero{padding:3.5rem 1.5rem 3rem}
   .biz-grid{grid-template-columns:1fr}
   .hffmc{grid-template-columns:1fr;gap:2rem}
   .acq-wrap{grid-template-columns:1fr;gap:3rem}
@@ -238,6 +249,68 @@ footer{background:var(--bg);border-top:1px solid var(--copper-border);padding:2.
   footer{grid-template-columns:1fr;gap:0.8rem}
   .footer-copy,.footer-addr{text-align:left}
   .f-row{grid-template-columns:1fr}
+}
+
+/* HAMBURGER */
+.nav-hamburger{
+  display:none;
+  flex-direction:column;justify-content:center;align-items:center;
+  gap:5px;width:40px;height:40px;
+  background:none;border:none;cursor:pointer;padding:4px;
+}
+.nav-hamburger span{
+  display:block;width:24px;height:2px;
+  background:var(--copper-light);
+  border-radius:2px;transition:all 0.3s;
+}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* MOBILE MENU */
+.mobile-menu{
+  position:fixed;top:62px;right:0;
+  width:240px;height:auto;
+  background:rgba(20,32,46,0.98);
+  backdrop-filter:blur(20px);
+  border-left:1px solid var(--copper-border);
+  border-bottom:1px solid var(--copper-border);
+  display:flex;flex-direction:column;
+  padding:1.5rem 0;
+  z-index:590;
+  transform:translateX(100%);
+  transition:transform 0.3s ease;
+}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{
+  font-family:var(--mono);font-size:1.05rem;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--text-mid);text-decoration:none;
+  padding:0.9rem 2rem;
+  border-bottom:1px solid rgba(216,228,240,0.06);
+  transition:color 0.2s,background 0.2s;
+}
+.mobile-menu a:hover{color:var(--copper-light);background:var(--copper-ghost)}
+.mobile-menu .mob-tel{
+  color:var(--copper-light) !important;
+  font-weight:500;border-bottom:none;
+  margin-top:0.5rem;
+}
+.menu-overlay{
+  position:fixed;inset:0;z-index:580;
+  background:rgba(0,0,0,0.4);
+  display:none;
+}
+.menu-overlay.open{display:block}
+
+@media(max-width:960px){
+  .nav-hamburger{display:flex}
+  .nav-links{display:none !important}
+}
+@media(min-width:961px){
+  .mobile-menu{display:none !important}
+  .menu-overlay{display:none !important}
+  .nav-hamburger{display:none}
 }
 </style>
 </head>
@@ -273,13 +346,25 @@ footer{background:var(--bg);border-top:1px solid var(--copper-border);padding:2.
       <span class="brand-cn">有豐資產管理股份有限公司</span>
     </div>
   </div>
-  <div class="nav-links">
-    <a href="#business">業務範疇</a>
-    <a href="#hffmc">HFFMC-VIS</a>
-    <a href="#acquisition">私人股權</a>
-    <a href="#contact" class="nav-cta">07 740 7373</a>
+  <div class="nav-links" id="navLinks">
+    <a href="#business" onclick="closeMenu()">業務範疇</a>
+    <a href="#hffmc" onclick="closeMenu()">HFFMC-VIS</a>
+    <a href="#acquisition" onclick="closeMenu()">私人股權</a>
+    <a href="#contact" class="nav-cta" onclick="closeMenu()">07 740 7373</a>
   </div>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="選單">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<!-- Mobile overlay menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#business" onclick="closeMenu()">業務範疇</a>
+  <a href="#hffmc" onclick="closeMenu()">HFFMC-VIS</a>
+  <a href="#acquisition" onclick="closeMenu()">私人股權</a>
+  <a href="#contact" onclick="closeMenu()">聯絡洽談</a>
+  <a href="tel:0777407373" onclick="closeMenu()" class="mob-tel">07 740 7373</a>
+</div>
+<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
 
 <!-- HERO -->
 <section class="hero" id="home">
@@ -308,25 +393,19 @@ footer{background:var(--bg);border-top:1px solid var(--copper-border);padding:2.
   <p class="s-body" style="max-width:660px">UFO有豐以自營交易為核，輔以全球風險承保與私人股權投資，構成彼此強化的複合型金融生態系統。</p>
   <div class="biz-grid">
     <div class="biz-card">
-      <div class="biz-n">01</div>
-      <div class="biz-icon">⚡</div>
-      <div class="biz-en">Proprietary Trading</div>
+      <div class="biz-n">Ⅰ &nbsp;·&nbsp; Proprietary Trading</div>
       <div class="biz-title">自營交易業務</div>
       <p class="biz-desc">UFO有豐作為自營交易機構（Proprietary Trading Firm），以原創的價值型投資模型為基礎，在全球公開市場中部署獨特且多樣的演算法策略。針對目標資產執行合約交易，精準取得優異的時間價值，形成持續複利增長的核心動能。</p>
       <div class="biz-box"><b>核心模式</b>價值型投資模型 × 演算法策略 × 合約交易 × 時間價值複利</div>
     </div>
     <div class="biz-card">
-      <div class="biz-n">02</div>
-      <div class="biz-icon">🛡</div>
-      <div class="biz-en">Risk Underwriting</div>
+      <div class="biz-n">Ⅱ &nbsp;·&nbsp; Risk Underwriting</div>
       <div class="biz-title">資產風險承保</div>
       <p class="biz-desc">以獨家開發的 HFFMC-VIS 價值投資系統，承保全球主要交易市場中資產持有人的損失風險。結合價值型投資模型與資產風險承保的策略實務，協助顧問客戶達成既有資產活化、資產再優化的循環投資管理。</p>
       <div class="biz-box"><b>系統工具</b>HFFMC-VIS · 全球主要市場 · 資產活化 · 再優化循環</div>
     </div>
     <div class="biz-card">
-      <div class="biz-n">03</div>
-      <div class="biz-icon">◈</div>
-      <div class="biz-en">Private Fund & Equity</div>
+      <div class="biz-n">Ⅲ &nbsp;·&nbsp; Private Fund & Equity</div>
       <div class="biz-title">私人基金與股權</div>
       <p class="biz-desc">透過 GP/LP 架構作為進行長期價值型資本投資的私人基金（Privately Fund），對新臺幣 3 億元以內的私人股權（Private Equity）進行現金收購。藉由財會稅實務協助客戶完整架構半自動化專屬獨立的生意系統。</p>
       <div class="biz-box"><b>架構方式</b>GP / LP · 長期價值投資 · 現金收購 · 生意系統建置</div>
@@ -415,6 +494,15 @@ footer{background:var(--bg);border-top:1px solid var(--copper-border);padding:2.
           <div class="info-val">802 高雄市苓雅區至誠路 73 號</div>
         </div>
       </div>
+      <div class="info-row">
+        <div class="info-ico">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="info-lbl">電子郵件</div>
+          <div class="info-val"><a href="mailto:UFO.am2025@gmail.com">UFO.am2025@gmail.com</a></div>
+        </div>
+      </div>
     </div>
     <div class="info-hours">
       <div class="hours-label">營業時間</div>
@@ -422,7 +510,7 @@ footer{background:var(--bg);border-top:1px solid var(--copper-border);padding:2.
     </div>
   </div>
   <div>
-    <div style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.22em;color:var(--copper);margin-bottom:1.3rem;text-transform:uppercase;opacity:0.8">// 洽談申請表</div>
+    <div style="font-family:var(--mono);font-size:1rem;letter-spacing:0.18em;color:var(--copper-light);margin-bottom:1.5rem;text-transform:uppercase;font-weight:500">// 洽談申請表</div>
     <div class="contact-form">
       <div class="f-row">
         <div class="f-group"><label class="f-label">姓名</label><input type="text" placeholder="您的姓名"></div>
@@ -457,6 +545,23 @@ footer{background:var(--bg);border-top:1px solid var(--copper-border);padding:2.
     <div class="footer-addr">802高雄市苓雅區至誠路73號 · 07 740 7373</div>
   </div>
 </footer>
+
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('menuOverlay');
+  const btn = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  overlay.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('menuOverlay').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+</script>
 
 <script>
 const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in') }), {threshold:0.08});
