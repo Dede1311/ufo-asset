@@ -43,7 +43,7 @@ nav{
   padding:0 2.5rem;
   background:rgba(20,32,46,0.93);
   backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--copper-border);
+  border-bottom:none;
 }
 .nav-brand{display:flex;align-items:center;gap:0.8rem}
 .nav-logo-img{height:38px;width:auto;mix-blend-mode:screen;filter:brightness(1.1)}
@@ -131,9 +131,9 @@ nav{
 .hero-tagline em{font-style:italic;color:var(--copper-pale);display:block;margin-bottom:0.1rem;font-size:1.1em}
 @keyframes sUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .hero-btns{display:flex;gap:1.1rem;flex-wrap:wrap;justify-content:center;opacity:0;animation:sUp 0.5s 0.95s ease forwards}
-.btn-copper{display:inline-flex;align-items:center;text-decoration:none;background:var(--copper);color:#fff;font-family:var(--mono);font-size:0.75rem;letter-spacing:0.2em;padding:0.9rem 2rem;font-weight:500;transition:background 0.15s,transform 0.15s}
+.btn-copper{display:inline-flex;align-items:center;text-decoration:none;background:var(--copper);color:#fff;font-family:var(--sans);font-size:1rem;letter-spacing:0.08em;padding:0.9rem 2.2rem;font-weight:500;transition:background 0.15s,transform 0.15s}
 .btn-copper:hover{background:var(--copper-light);transform:translateY(-2px)}
-.btn-line{display:inline-flex;align-items:center;text-decoration:none;border:1px solid rgba(143,168,192,0.35);color:var(--fog);font-family:var(--mono);font-size:0.75rem;letter-spacing:0.2em;padding:0.9rem 2rem;transition:border-color 0.15s,color 0.15s}
+.btn-line{display:inline-flex;align-items:center;text-decoration:none;border:1px solid rgba(143,168,192,0.45);color:var(--fog);font-family:var(--sans);font-size:1rem;letter-spacing:0.08em;padding:0.9rem 2.2rem;transition:border-color 0.15s,color 0.15s}
 .btn-line:hover{border-color:var(--copper-light);color:var(--copper-light)}
 
 /* SEC BASE */
@@ -149,9 +149,18 @@ nav{
 .biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--copper-border);margin-top:3.5rem}
 .biz-card{background:var(--bg2);padding:2.8rem 2.2rem;position:relative;overflow:hidden;transition:background 0.3s}
 .biz-card:hover{background:var(--panel)}
-.biz-n{position:absolute;right:1.5rem;top:1.2rem;font-family:var(--mono);font-size:5rem;font-weight:300;color:rgba(200,134,74,0.06);line-height:1;pointer-events:none}
+.biz-n{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  font-family:var(--mono);font-size:0.72rem;font-weight:400;
+  color:var(--copper-light);letter-spacing:0.25em;
+  margin-bottom:1.4rem;
+  padding:0.4rem 0;
+  border-top:1px solid var(--copper-border);
+  border-bottom:1px solid var(--copper-border);
+  width:100%;
+}
 .biz-icon{width:42px;height:42px;border:1px solid var(--copper-border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:1.4rem;color:var(--copper-light)}
-.biz-en{font-family:var(--mono);font-size:0.88rem;letter-spacing:0.15em;color:var(--copper-light);text-transform:uppercase;margin-bottom:0.5rem;font-weight:500}
+.biz-en{display:none}
 .biz-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:0.9rem;letter-spacing:0.05em}
 .biz-desc{font-size:1rem;line-height:2;color:var(--text-mid);font-weight:300;margin-bottom:1.6rem}
 .biz-box{background:var(--copper-ghost);border:1px solid var(--copper-border);border-left:2px solid var(--copper);padding:1rem 1.1rem;font-family:var(--mono);font-size:0.72rem;color:rgba(200,134,74,0.85);line-height:1.7}
@@ -164,7 +173,7 @@ nav{
 .hffmc-t{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--text);margin-bottom:0.9rem}
 .hffmc-d{font-size:0.95rem;line-height:2;color:var(--text-mid);font-weight:300;margin-bottom:1.8rem;max-width:620px}
 .tags{display:flex;flex-wrap:wrap;gap:0.5rem}
-.tag{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.12em;border:1px solid var(--copper-border);color:var(--fog);padding:0.38rem 0.8rem;transition:background 0.2s,color 0.2s}
+.tag{font-family:var(--mono);font-size:0.82rem;letter-spacing:0.08em;border:1px solid var(--copper-border);color:var(--text-mid);padding:0.45rem 1rem;transition:background 0.2s,color 0.2s}
 .tag:hover{background:var(--copper-ghost);color:var(--copper-light)}
 
 /* ACQUISITION */
@@ -241,6 +250,68 @@ footer{background:var(--bg);border-top:1px solid var(--copper-border);padding:2.
   .footer-copy,.footer-addr{text-align:left}
   .f-row{grid-template-columns:1fr}
 }
+
+/* HAMBURGER */
+.nav-hamburger{
+  display:none;
+  flex-direction:column;justify-content:center;align-items:center;
+  gap:5px;width:40px;height:40px;
+  background:none;border:none;cursor:pointer;padding:4px;
+}
+.nav-hamburger span{
+  display:block;width:24px;height:2px;
+  background:var(--copper-light);
+  border-radius:2px;transition:all 0.3s;
+}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* MOBILE MENU */
+.mobile-menu{
+  position:fixed;top:62px;right:0;
+  width:240px;height:auto;
+  background:rgba(20,32,46,0.98);
+  backdrop-filter:blur(20px);
+  border-left:1px solid var(--copper-border);
+  border-bottom:1px solid var(--copper-border);
+  display:flex;flex-direction:column;
+  padding:1.5rem 0;
+  z-index:590;
+  transform:translateX(100%);
+  transition:transform 0.3s ease;
+}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{
+  font-family:var(--mono);font-size:0.9rem;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--text-mid);text-decoration:none;
+  padding:0.9rem 2rem;
+  border-bottom:1px solid rgba(216,228,240,0.06);
+  transition:color 0.2s,background 0.2s;
+}
+.mobile-menu a:hover{color:var(--copper-light);background:var(--copper-ghost)}
+.mobile-menu .mob-tel{
+  color:var(--copper-light) !important;
+  font-weight:500;border-bottom:none;
+  margin-top:0.5rem;
+}
+.menu-overlay{
+  position:fixed;inset:0;z-index:580;
+  background:rgba(0,0,0,0.4);
+  display:none;
+}
+.menu-overlay.open{display:block}
+
+@media(max-width:960px){
+  .nav-hamburger{display:flex}
+  .nav-links{display:none !important}
+}
+@media(min-width:961px){
+  .mobile-menu{display:none !important}
+  .menu-overlay{display:none !important}
+  .nav-hamburger{display:none}
+}
 </style>
 </head>
 <body>
@@ -275,13 +346,25 @@ footer{background:var(--bg);border-top:1px solid var(--copper-border);padding:2.
       <span class="brand-cn">有豐資產管理股份有限公司</span>
     </div>
   </div>
-  <div class="nav-links">
-    <a href="#business">業務範疇</a>
-    <a href="#hffmc">HFFMC-VIS</a>
-    <a href="#acquisition">私人股權</a>
-    <a href="#contact" class="nav-cta">07 740 7373</a>
+  <div class="nav-links" id="navLinks">
+    <a href="#business" onclick="closeMenu()">業務範疇</a>
+    <a href="#hffmc" onclick="closeMenu()">HFFMC-VIS</a>
+    <a href="#acquisition" onclick="closeMenu()">私人股權</a>
+    <a href="#contact" class="nav-cta" onclick="closeMenu()">07 740 7373</a>
   </div>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="選單">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<!-- Mobile overlay menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#business" onclick="closeMenu()">業務範疇</a>
+  <a href="#hffmc" onclick="closeMenu()">HFFMC-VIS</a>
+  <a href="#acquisition" onclick="closeMenu()">私人股權</a>
+  <a href="#contact" onclick="closeMenu()">聯絡洽談</a>
+  <a href="tel:0777407373" onclick="closeMenu()" class="mob-tel">07 740 7373</a>
+</div>
+<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
 
 <!-- HERO -->
 <section class="hero" id="home">
@@ -310,25 +393,19 @@ footer{background:var(--bg);border-top:1px solid var(--copper-border);padding:2.
   <p class="s-body" style="max-width:660px">UFO有豐以自營交易為核，輔以全球風險承保與私人股權投資，構成彼此強化的複合型金融生態系統。</p>
   <div class="biz-grid">
     <div class="biz-card">
-      <div class="biz-n">01</div>
-      <div class="biz-icon">⚡</div>
-      <div class="biz-en">Proprietary Trading</div>
+      <div class="biz-n">Ⅰ &nbsp;·&nbsp; Proprietary Trading</div>
       <div class="biz-title">自營交易業務</div>
       <p class="biz-desc">UFO有豐作為自營交易機構（Proprietary Trading Firm），以原創的價值型投資模型為基礎，在全球公開市場中部署獨特且多樣的演算法策略。針對目標資產執行合約交易，精準取得優異的時間價值，形成持續複利增長的核心動能。</p>
       <div class="biz-box"><b>核心模式</b>價值型投資模型 × 演算法策略 × 合約交易 × 時間價值複利</div>
     </div>
     <div class="biz-card">
-      <div class="biz-n">02</div>
-      <div class="biz-icon">🛡</div>
-      <div class="biz-en">Risk Underwriting</div>
+      <div class="biz-n">Ⅱ &nbsp;·&nbsp; Risk Underwriting</div>
       <div class="biz-title">資產風險承保</div>
       <p class="biz-desc">以獨家開發的 HFFMC-VIS 價值投資系統，承保全球主要交易市場中資產持有人的損失風險。結合價值型投資模型與資產風險承保的策略實務，協助顧問客戶達成既有資產活化、資產再優化的循環投資管理。</p>
       <div class="biz-box"><b>系統工具</b>HFFMC-VIS · 全球主要市場 · 資產活化 · 再優化循環</div>
     </div>
     <div class="biz-card">
-      <div class="biz-n">03</div>
-      <div class="biz-icon">◈</div>
-      <div class="biz-en">Private Fund & Equity</div>
+      <div class="biz-n">Ⅲ &nbsp;·&nbsp; Private Fund & Equity</div>
       <div class="biz-title">私人基金與股權</div>
       <p class="biz-desc">透過 GP/LP 架構作為進行長期價值型資本投資的私人基金（Privately Fund），對新臺幣 3 億元以內的私人股權（Private Equity）進行現金收購。藉由財會稅實務協助客戶完整架構半自動化專屬獨立的生意系統。</p>
       <div class="biz-box"><b>架構方式</b>GP / LP · 長期價值投資 · 現金收購 · 生意系統建置</div>
@@ -417,6 +494,15 @@ footer{background:var(--bg);border-top:1px solid var(--copper-border);padding:2.
           <div class="info-val">802 高雄市苓雅區至誠路 73 號</div>
         </div>
       </div>
+      <div class="info-row">
+        <div class="info-ico">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="info-lbl">電子郵件</div>
+          <div class="info-val"><a href="mailto:UFO.am2025@gmail.com">UFO.am2025@gmail.com</a></div>
+        </div>
+      </div>
     </div>
     <div class="info-hours">
       <div class="hours-label">營業時間</div>
@@ -459,6 +545,23 @@ footer{background:var(--bg);border-top:1px solid var(--copper-border);padding:2.
     <div class="footer-addr">802高雄市苓雅區至誠路73號 · 07 740 7373</div>
   </div>
 </footer>
+
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('menuOverlay');
+  const btn = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  overlay.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('menuOverlay').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+</script>
 
 <script>
 const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in') }), {threshold:0.08});
