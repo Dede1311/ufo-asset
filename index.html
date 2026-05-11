@@ -567,30 +567,3 @@ document.getElementById('submitBtn').addEventListener('click', function(){
 </script>
 </body>
 </html>
-/* === 手機版 eyebrow 修正 === */
-@media (max-width: 768px) {
-  /* 把這裡的 selector 換成你 eyebrow 實際的 class 名稱 */
-  .section-eyebrow,
-  [class*="eyebrow"],
-  [class*="section-label"] {
-    font-size: 0.72rem;        /* 縮小避免換行 */
-    letter-spacing: 0.05em;    /* 字距收一點 */
-    line-height: 1.4;
-    padding: 0.9rem 0;         /* 上下留白避免撞到分隔線 */
-    white-space: normal;       /* 真換行時也不會擠 */
-  }
-
-  /* eyebrow 跟下方主標題之間的距離 */
-  .section-eyebrow + h2,
-  [class*="eyebrow"] + h2 {
-    margin-top: 1.5rem;
-  }
-}
-
-/* 超窄螢幕（iPhone SE 等）再縮一級 */
-@media (max-width: 380px) {
-  .section-eyebrow,
-  [class*="eyebrow"] {
-    font-size: 0.65rem;
-  }
-}
